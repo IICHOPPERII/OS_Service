@@ -32,6 +32,8 @@
 .sidebar_li{
     padding: 10px;
     color: #ffffffd0;
+    text-decoration: none;
+    list-style: none;
 }
 .sidebar_li:hover{
     border-radius: 10px;

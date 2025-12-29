@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OS_Services</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/financeiro.css">
     <link rel="stylesheet" href="/CSS/sidebar.css">
 </head>
 <body>
-        <div class="sidebar">
+       <div class="sidebar">
             <div class="logo-titulos">
                 <div class="logo">
                     <i class="bi bi-wrench-adjustable"></i>
@@ -32,7 +32,7 @@
         </div>
 
         <main>
-            <h1>Dashboard</h1>
+        <h1>Dashboard</h1>
             <h3>Visão Geral do sistema</h3>
 
             <div>
@@ -43,9 +43,6 @@
                     <label for="data-final">Data Final</label>
                     <input type="date" name="data-final" id="data-final">
 
-                    <label for="os">OS</label>
-                    <input type="text" name="os" id="os">
-
                     <button>Buscar Dados</button>
                 </form>
             </div>
@@ -53,39 +50,37 @@
             <div class="cards">
                 <div class="card total_os">
                     <i class="bi bi-clipboard-check"></i>
-                    <span>Total de OS</span>
-                    <h1>5</h1>
-                </div>
-                <div class="card canceladas_os">
-                    <i class="bi bi-clipboard-x"></i>
-                    <span>OS Canceladas</span>
-                    <h1>1</h1>
+                    <span>Faturamento Total</span>
+                    <h1>1.780,00</h1>
                 </div>
                 <div class="card faturamento_os">
-                    <i class="bi bi-currency-dollar"></i>
-                    <span>Faturamento</span>
-                    <h1>R$ 8.450,00</h1>
+                    <i class="bi bi-clipboard-x"></i>
+                    <span>Valores Recebidos</span>
+                    <h1>1.780,00</h1>
                 </div>
                 <div class="card pendente_os">
+                    <i class="bi bi-currency-dollar"></i>
+                    <span>Valores Pendentes</span>
+                    <h1>R$ 8.450,00</h1>
+                </div>
+                <div class="card  canceladas_os">
                     <i class="bi bi-stopwatch"></i>
-                    <span>Pag Pendentes</span>
+                    <span>Valores Cancelados</span>
                     <h1>R$ 1.780,00</h1>
                 </div>
             </div>
 
             <div class="container">
                 <div class="status">
-                    <h2>Ordens Por Status</h2>
+                    <h2>Pagamentos Pendentes</h2>
                     <ul>
-                        <li>Abertas <span>2</span></li>
-                        <li>Em Andamento <span>3</span></li>
-                        <li>Finalizadas <span>2</span></li>
-                        <li>Canceladas <span>1</span></li>
+                        <li>Edson Vitor<span>1.520,00</span></li>
+                        <li>Ease Tech Gyn<span>3.201,00</span></li>
                     </ul>
                 </div>
 
                 <div class="recentes">
-                    <h2>Ordens Recentes   </h2>
+                    <h2>Pagamentos Recebidos</h2>
                     <table>
                         <thead>
                             <th>OS</th>
@@ -93,7 +88,6 @@
                             <th>Valor</th>
                             <th>Prazos</th>
                             <th>Data Abertura</th>
-                            <th>Ações</th>
                         </thead>
                         <tbody class="corpo_tabela" id="corpo_tabela">
                         <tr>
@@ -102,7 +96,6 @@
                             <td>3.500,00</td>
                             <td>01/01/2026</td>
                             <td>28/12/2025</td>
-                            <td>Editar</td>
                         </tr>
                         </tbody>
                     </table>
@@ -110,6 +103,6 @@
             </div>
             
         </main>
-    
 </body>
+
 </html>

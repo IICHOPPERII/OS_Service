@@ -1,0 +1,71 @@
+main{
+    width: 100%;
+    display: flex;
+}
+
+.tabela{
+    width: 70%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#e4d8d894 ;
+    box-shadow:0px 1px 1px 2px #31282838;
+}
+
+table{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+}
+tr:hover{
+    cursor: pointer;
+    color: #024cc4;
+}
+th{
+    background-color: #e4d8d8;
+}
+td{
+    background-color: #e4d8d8;
+}
+
+.formulario{
+    width: 30%;
+    margin: 10px;
+}
+
+.formulario legend{
+    padding: 10px;
+    border-radius: 10px;
+    background-color:antiquewhite;
+    box-shadow:0px 1px 1px 2px #31282838;
+}
+
+.formulario fieldset{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e4d8d894;
+    box-shadow:0px 1px 1px 2px #31282838;
+    border: solid 1px #e4d8d894;
+}
+
+.formulario div{
+    margin: 10px;
+    display: flex;
+}
+
+.formulario div label{
+    width: 30%;
+}
+
+.formulario div input{
+    padding: 3px;
+    width: 70%;
+    height: 20px;
+    background-color: #e4d8d894;
+    box-shadow:0px 1px 1px 2px #31282838;
+    border: solid 1px #e4d8d894;
+}
+.submit:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+}
