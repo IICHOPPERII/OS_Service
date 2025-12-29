@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0;
+
+}
+.logo-titulos{
+    display: flex;
+}
+.logo{
+    font-size: 24px;
+    background-color: #3c83f6;
+    width: 26px;
+    border-radius: 6px;
+    padding: 5px;
+}
+.titulos{
+    font-size: 16px;
+    margin-left: 10px;
+}
+.sidebar{
+    padding: 10px;
+    max-width: 20%;
+    height: 100%;
+    background-color: #0f1729;
+    color: #fff;
+}
+ul{
+    padding: 10px;
+    list-style: none;
+}
+li{
+    padding: 10px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
