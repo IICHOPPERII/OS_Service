@@ -33,6 +33,41 @@
 
         <main>
             <button id="novo_usuario">Novo Ususario</button>
+
+            <div class="formulario">
+                <form action="POST">
+                    <fieldset>
+                        <legend>
+                            Cadastro de Usuarios
+                        </legend>
+
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" class="nome" name="nome">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="text" id="email" class="email" name="email">
+                        </div>
+                        <div>
+                            <label for="senha">Senha</label>
+                            <input type="text" id="senha" class="senha" name="senha">
+                        </div>
+                        <div>
+                            <label for="permissao">Permissão</label>
+                            <select name="permissao" id="permissao" class="permissao">
+                                <option value="ADM">ADM</option>
+                                <option value="ADM">TECH</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="button" value="Cadastrar" id="enviar">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+             
+
             <table>
                 <thead>
                     <th>Nome</th>
@@ -53,5 +88,8 @@
             </table>
         </main>
 </body>
+
+<script src="/JavaScript/interface_usuarios.js"></script>
+<script src="/JavaScript/usuarios.js"></script>
 
 </html>
