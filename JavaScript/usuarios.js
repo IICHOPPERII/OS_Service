@@ -3,9 +3,11 @@ class usuarios{
         
     }
 
+    // metodos assincrono para cadastrar usuarios, recebidos da interface usuarios
     async cadastrar_usuario(nome,email,senha,permissao){
+        //fazemos requisição post no server.js passando os dados do usuario pelo body
         const response = await fetch('http://localhost:3000/inserir-usuarios',{
-            method:'POST',
+            method:'POST', //POST para enviar
             headers:{
                 'Content-Type':'application/json'
             },
@@ -24,11 +26,13 @@ class usuarios{
         const data = await response.json();
         console.log('Usuario criado',data)
     }
-
+ // metodos assincrono para atualizar usuarios, recebidos da interface usuarios
     async atualizar_usuario(id, nome, email, senha, permissao) {
     try {
+         //fazemos requisição post no server.js passando os dados do usuario pelo body
+        //id passado direto na requisição 
         const response = await fetch(`http://localhost:3000/atualizar-usuario/${id}`, {
-            method: 'PUT', // Ou 'PATCH' dependendo da sua API
+            method: 'PUT', // PUT para atualizar 
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -52,7 +56,7 @@ class usuarios{
         throw error;
     }
 }
-
+// metodos assincrono para Obter usuarios
     async listar_usuarios() {
     try {
         const response = await fetch('http://localhost:3000/listar_usuarios');
@@ -68,10 +72,13 @@ class usuarios{
         console.error(error.message);
     }
 }
+
+// Metodo assincrono para deletar usuarios
+// id passado direto na requisição 
 async deletar_usuario(id) {
     try {
         const response = await fetch(`http://localhost:3000/deletar-usuario/${id}`, {
-            method: 'DELETE',
+            method: 'DELETE', // delete para deletar usuarios
             headers: {
                 'Content-Type': 'application/json'
             }

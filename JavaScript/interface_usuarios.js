@@ -1,12 +1,12 @@
 class Interface_usuarios{
     constructor(){
         
-        this.usuario = new usuarios();
-        this.editar = false;
-        this.id_usuario = null;
+        this.usuario = new usuarios(); // recebe a class usuarios
+        this.editar = false; // variavel para permitir editar
+        this.id_usuario = null; // recebe id do usuario a ser editado
 
-        this.iniciar_botoes();
-        this.listar_usuarios();
+        this.iniciar_botoes(); // inicia a inteface de botoes cliques
+        this.listar_usuarios(); // metodo para listar os usuarios
         
     }
 
@@ -32,6 +32,7 @@ class Interface_usuarios{
         cadastrar_usuario.addEventListener('click', async e => {
             e.preventDefault();
 
+            // variaveis do usuario
             let name = document.querySelector(".nome").value;
             let email = document.querySelector(".email").value;
             let senha = document.querySelector(".senha").value;
@@ -39,6 +40,7 @@ class Interface_usuarios{
 
             let form = document.querySelector(".formulario");
 
+            // se editar for verdadeiro vai atualizar os dados do usuario se não insere novo usuario
             if(this.editar == true){
                 await this.usuario.atualizar_usuario(this.id_usuario,name,email,senha,permissao);
                 this.editar = false;
@@ -47,23 +49,25 @@ class Interface_usuarios{
                 console.log(name,email,senha,permissao);
                 await this.usuario.cadastrar_usuario(name,email,senha,permissao);
             }
+            // apos inserir ou atualizar lista os usuarios novamente
             await this.listar_usuarios();
+            // remove o formulario de cadastro/atualização da tela 
             form.style.display = 'none';
         })
     }
 
     async listar_usuarios() {
     this.usuario.listar_usuarios().then(dados => {
-        // 1. Pegamos a lista de usuários que vem do seu backend
+        // Pegamos a lista de usuários que vem do seu backend
         let lista = dados.data; 
         
-        // 2. Selecionamos o corpo da tabela
+        // Selecionamos o corpo da tabela
         let tabela = document.querySelector("#corpo_tabela");
         
-        // 3. Limpamos a tabela antes de preencher (para não duplicar dados)
+        // Limpamos a tabela antes de preencher (para não duplicar dados)
         tabela.innerHTML = "";
 
-        // 4. O loop deve envolver a criação das linhas
+        // O loop deve envolver a criação das linhas
         lista.forEach(element => {
             console.log("Processando usuário:", element);
 
@@ -87,14 +91,17 @@ class Interface_usuarios{
             const btnEditar = tr.querySelector(".btn-editar");
             const btnExcluir = tr.querySelector(".btn-excluir");
 
-            // 2. Adicionamos o evento ao botão Editar
+            // Adicionamos o evento ao botão Editar
             btnEditar.addEventListener("click", () => {
-                console.log("Editando o usuário:", element.name);
-                this.editar = true;
-                this.id_usuario = element.id;
+                
+                this.editar = true; // editar recebe verdadeiro
+                this.id_usuario = element.id; // recebe o id do usuario
+
+                // torna o formulario visivel
                 let form = document.querySelector(".formulario");
                 form.style.display = 'block';
 
+                // insere dados do usuario no formulario
                 document.querySelector(".nome").value = element.name;
                 document.querySelector(".email").value = element.email;
                 document.querySelector(".senha").value = element.password;
@@ -104,8 +111,9 @@ class Interface_usuarios{
 
             // 3. Adicionamos o evento ao botão Excluir
              btnExcluir.addEventListener("click", () => {
+                // fazemos um alert para confirmar se deseja excluir usuario
                 if(confirm(`Tem certeza que deseja excluir ${element.name}?`)) {
-                    console.log("Excluindo ID:", element.id);
+                    // apos confirmar chama metodo para delete passando id do usuario
                     this.usuario.deletar_usuario(element.id).then(() => this.listar_usuarios());
                 }
             });
