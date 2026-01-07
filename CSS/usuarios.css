@@ -19,6 +19,7 @@ td{
     margin-left: 15%;
     margin-top: 5%;
     position:fixed;
+    display: none;
 }
 form div{
     padding: 10px;
@@ -38,4 +39,24 @@ form fieldset{
 }
 form div label{
     width: 20%;
+}
+.fechar_form{
+    position: relative;
+    top: 40px;
+    left: 95%;
+    background-color: rgb(119, 115, 115);
+    width: 40px;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    box-shadow: #000 2px 2px 2px 1px;
+}
+
+.fechar_form:hover{
+    background-color: rgb(97, 94, 94);
+    cursor: pointer;
+}
+
+.acoes{
+    padding: 5px;
 }
